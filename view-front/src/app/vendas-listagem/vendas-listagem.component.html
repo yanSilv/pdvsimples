@@ -1,0 +1,20 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <p-table [value]="vendas">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-header-id">Código</th>
+            <th>cliente</th>
+            <th>Data Cadastro</th>
+            <th>Total</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-venda>
+          <td>{{venda.id}}</td>
+          <td>{{venda.cliente.nome}}</td>
+          <td class="col-data">{{venda.cadastro}}</td>
+          <td class="col-numero">{{venda.total}}</td>
+        </ng-template>
+    </p-table>
+  </div>
+</div>
