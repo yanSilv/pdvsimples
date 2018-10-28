@@ -29,6 +29,7 @@ public class VendaService {
 	}
 
 	public Venda adicionar(Venda obj) {
+		System.out.println(LocalDateTime.now());
 		obj.setCadastro(LocalDateTime.now());
 		obj.getItens().forEach(i -> {
 			i.setVenda(obj);
