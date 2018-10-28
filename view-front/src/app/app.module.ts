@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common'
+import { FormsModule } from '@angular/forms';
 
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { PanelModule} from 'primeng/panel';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { VendasListagemComponent } from './vendas-listagem/vendas-listagem.component';
@@ -28,13 +29,15 @@ registerLocaleData(localePt);
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+
+    CurrencyMaskModule,
+    TableModule,
     DropdownModule,
     InputTextModule,
-    CurrencyMaskModule,
-    TableModule
+    PanelModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' }
