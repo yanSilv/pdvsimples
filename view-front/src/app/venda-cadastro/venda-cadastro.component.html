@@ -3,7 +3,7 @@
     <h2>Cadastro Venda</h2>
   </div>
 </div>
-<form >
+<form autocomplete="off" #frm="ngForm" (ngSubmit)="adicionar(frm)">
   <div class="ui-g">
     <div class="ui-g-8 ui-fluid">
       <label>
@@ -85,5 +85,8 @@
   <div class="ui-g-4 ui-g-offset-8 ui-fluid">
     <label>Total: </label>
     <input pInputText readonly [value]="venda.total | number: '1.2-2'"/>
+  </div>
+  <div class="ui-g-4 ui-g-offset-8">
+    <button pButton icon="pi pi-check" label="Salvar" [disabled]="frm.invalid || venda.itens.length === 0"></button>
   </div>
 </form>
