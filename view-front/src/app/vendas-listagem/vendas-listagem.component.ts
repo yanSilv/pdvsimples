@@ -16,6 +16,10 @@ export class VendasListagemComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  listar() {
     this.vendaService.listar().subscribe(response => this.vendas = response);
   }
 
