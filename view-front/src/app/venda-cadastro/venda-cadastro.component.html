@@ -23,7 +23,8 @@
       </label>
       <input pInputText id="frete" name="frete" 
         currencyMask [options]="{prefix: '', thousands: '.', decimal: ',', allowNegative: false}"
-        [(ngModel)]="venda.frete" required  
+        [(ngModel)]="venda.frete" required 
+        (ngModelChange)="calcularTotal()" 
       />
     </div>
   </div>
@@ -72,8 +73,17 @@
               <td>{{ item.total | number:'1.2-2'}}</td>
             </tr>
           </ng-template>
+          <ng-template pTemplate="emptymessage">
+              <tr>
+                <td colspan="4">Nenhum item adicionado na venda.</td>
+              </tr>
+            </ng-template>
         </p-table>
       </div>
     </p-panel>
+  </div>
+  <div class="ui-g-4 ui-g-offset-8 ui-fluid">
+    <label>Total: </label>
+    <input pInputText readonly [value]="venda.total | number: '1.2-2'"/>
   </div>
 </form>
